@@ -18,7 +18,7 @@ model = ChatMistralAI(model="mistral-small-2603")
 parser = StrOutputParser()
 
 
-chain = prompt | model | parser
+chain = prompt | model | parser hfguyth
 
 result = chain.invoke("Machine Learning")
 print(result)
