@@ -12,3 +12,7 @@ from langchain_core.output_parsers import StrOutputParser
 #allows you to see the input and output of a runnable without any modifications.
  
 from langchain_core.runnables import RunnableParallel,RunnablePassthrough
+
+# Components
+model = ChatMistralAI(model="mistral-small-2603")
+parser = StrOutputParser()
