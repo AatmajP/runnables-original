@@ -25,5 +25,18 @@ llm = ChatMistralAI(model = "mistral-small-2603")
 # tool when generating responses.
 llm_with_tool = llm.bind_tools([text_length_tool])
 
-result = llm_with_tool.invoke("How many characters are in the following text: 'Hello, world!'")
-print(result)
+
+# llm decides tool
+result = llm_with_tool.invoke(
+    "use the text_length_tool to find the length of the following text: 'Hello how are you?'")
+
+
+# extracting the tool call from the result
+if result.tool_calls:
+    tool_call = result.tool_calls[0]
+    tool_result = text_length_tool.invoke(tool_call['args'])
+
+
+final_result = llm.invoke(f"The length of the text is: {tool_result}")
+
+print(final_result.content)
