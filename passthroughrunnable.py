@@ -32,12 +32,16 @@ explain_prompt = ChatPromptTemplate.from_messages([
 # Create a sequence of operations 
 seq = code_prompt | model | parser
 
+# Create a parallel runnable that generates code and explains it
 seq2 = RunnableParallel(
     {"code" :  RunnablePassthrough(),
      "explanation" : explain_prompt | model | parser
     }
 )
 
+
+
+# Create a chain of the two sequences
 chain = seq | seq2
 
 result = chain.invoke({"topic" : "please write a code of palindrome in python "})
