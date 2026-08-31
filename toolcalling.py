@@ -5,38 +5,35 @@ from langchain.tools import tool
 from langchain_core.messages import HumanMessage
 #from rich import print 
 
-#1 Creating a tool
+#1 creating a tool 
 
 @tool
-def text_length_tool(text:str) -> int:
-    """
-    Returns the number of character in a given text"""
+def get_text_length(text: str) -> int:
+    """Returns the number of character in a given text"""
     return len(text)
 
-#this tool dont have any model
 tools = {
-    "text_length_tool" : text_length_tool
+    "get_text_length" : get_text_length
 }
 llm = ChatMistralAI(model = "mistral-small-2603")
 
 #tool binding 
+llm_with_tool = llm.bind_tools([get_text_length])
 
-#this binds the tool to the llm, allowing the llm to use the 
-# tool when generating responses.
-llm_with_tool = llm.bind_tools([text_length_tool])
+message = []
+prompt = input("You: ")
+query = HumanMessage(prompt)
+message.append(query)
 
+result = llm_with_tool.invoke(message)
 
-# llm decides tool
-result = llm_with_tool.invoke(
-    "use the text_length_tool to find the length of the following text: 'Hello how are you?'")
+message.append(result)
 
-
-# extracting the tool call from the result
 if result.tool_calls:
-    tool_call = result.tool_calls[0]
-    tool_result = text_length_tool.invoke(tool_call['args'])
+    tool_name = result.tool_calls[0]["name"]
+    tool_message = tools[tool_name].invoke(result.tool_calls[0])
+    message.append(tool_message)
+   
 
-
-final_result = llm.invoke(f"The length of the text is: {tool_result}")
-
-print(final_result.content)
+result = llm_with_tool.invoke(message)
+print(result.content)
