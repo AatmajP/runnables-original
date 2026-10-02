@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-load_dotenv( )
+load_dotenv()
 
 
 #os is used to access environment variables and perform file system operations
