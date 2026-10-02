@@ -53,7 +53,7 @@ def get_news(city: str) -> str:
         max_results=3
     )
     
-    results = response.get("results", [])
+    results= response.get("results", [])
     
     if not results:
         return f"No news found for {city}"
