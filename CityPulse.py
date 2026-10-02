@@ -65,7 +65,7 @@ def get_news(city: str) -> str:
         url = r.get("url", "")
         snippet = r.get("content", "")
         
-        news_list.append(
+        news_list.append( 
             f"- {title}\n  🔗 {url}\n  📝 {snippet[:100]}..."
         )
     
