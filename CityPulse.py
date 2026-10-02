@@ -50,7 +50,7 @@ def get_news(city: str) -> str:
     response = tavily_client.search( 
         query=f"latest news in {city}",
         search_depth="basic",
-        max_results=3
+        max_results=3 
     )
     
     results= response.get("results", [])
