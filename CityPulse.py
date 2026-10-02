@@ -47,7 +47,7 @@ tavily_client =TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 def get_news(city: str) -> str:
     """Get latest news about a city"""
     
-    response = tavily_client.search( s
+    response = tavily_client.search( 
         query=f"latest news in {city}",
         search_depth="basic",
         max_results=3
