@@ -19,7 +19,7 @@ from langchain.agents.middleware import wrap_tool_call
 #weather tool
 
 @tool
-def get_weather(city : str) -> str:
+def get_weather(city : str) -> str: 
     """
     Get the weather for a given city.
     """
@@ -41,7 +41,7 @@ def get_weather(city : str) -> str:
 #print(get_weather("Bangalore"))
 
 #Tavily search tool
-tavily_client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
+tavily_client =TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 @tool
 def get_news(city: str) -> str:
