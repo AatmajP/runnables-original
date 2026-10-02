@@ -23,7 +23,7 @@ def get_weather(city : str) -> str:
     """
     Get the weather for a given city.
     """
-    API_KEY = os.getenv("OPENWEATHER_API_KEY")
+    API_KEY = os.getenv("OPENWEATHER_API_KEY") 
 
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
     response = requests.get(url)
