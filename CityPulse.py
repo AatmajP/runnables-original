@@ -61,7 +61,7 @@ def get_news(city: str) -> str:
     news_list = []
     
     for r in results:
-        title = r.get("title", "No title")
+        title = r.get("title", "No title") 
         url = r.get("url", "")
         snippet = r.get("content", "")
         
