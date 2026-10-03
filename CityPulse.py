@@ -18,7 +18,7 @@ from langchain.agents.middleware import wrap_tool_call
 
 #weather tool
 
-@tool
+@tool 
 def get_weather(city : str) -> str:
     """
     Get the weather for a given city.
