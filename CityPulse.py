@@ -10,7 +10,7 @@ from langchain_mistralai import ChatMistralAI
 from langchain.tools import tool 
 from langchain_core.messages import HumanMessage, ToolMessage
 from tavily import TavilyClient
-from rich import print #
+from rich import print #used for rich text formatting in the console
 from langchain.agents import create_agent 
 from langchain.agents.middleware import wrap_tool_call 
 
