@@ -14,7 +14,7 @@ from rich import print
 from langchain.agents import create_agent 
 from langchain.agents.middleware import wrap_tool_call 
 
-#Now we willl build some toos
+#Now we willl build some toolls
 
 #weather tool
 
