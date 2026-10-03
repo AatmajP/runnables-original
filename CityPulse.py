@@ -38,7 +38,7 @@ def get_weather(city : str) -> str:
     
     return f"The weather in {city} is {description} with a temperature of {temperature}°C."
 
-#print(get_weather("Bangalore"))
+#print(get_weather("Bangalore")) 
 
 #Tavily search tool
 tavily_client =TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
