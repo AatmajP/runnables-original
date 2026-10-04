@@ -21,7 +21,7 @@ from langchain.agents.middleware  import wrap_tool_call
 @tool #this decorator registers  function as a tool that can be used by the agent
 def get_weather(city : str) -> str:
     """
-    Get the weather for a given city. 
+    Get the weather for a given city.  
     """
     API_KEY = os.getenv("OPENWEATHER_API_KEY") 
 
