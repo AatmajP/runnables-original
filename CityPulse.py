@@ -30,7 +30,7 @@ def get_weather(city : str) -> str:
     data = response.json() 
     print("Debug",data) 
 
-    if str(data.get("cod")) != "200":
+    if str(data.get("cod"))!= "200":
         return f"Could not retrieve weather data for {city}. Please check the city name and try again."
 
     description = data["weather"][0]["description"]
