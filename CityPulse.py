@@ -14,7 +14,7 @@ from rich import print #used for rich text formatting in the console
 from langchain.agents import create_agent 
 from langchain.agents.middleware  import wrap_tool_call 
 
-#Now we willl build some tooll
+#Now we willl build some tools
 
 #weather tool 
 
