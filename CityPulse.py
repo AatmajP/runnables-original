@@ -34,7 +34,7 @@ def get_weather(city : str) -> str:
         return f"Could not retrieve weather data for {city}. Please check the city name and try again."
 
     description = data["weather"][0]["description"]
-    temperature = data["main"]["temp"]
+    temperature = data["main"]["temp"] 
     
     return f"The weather in {city} is {description} with a temperature of {temperature}°C."
 
