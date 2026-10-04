@@ -16,7 +16,7 @@ from langchain.agents.middleware  import wrap_tool_call
 
 #Now we willl build some tooll
 
-#weather tool
+#weather tool 
 
 @tool #this decorator registers  function as a tool that can be used by the agent
 def get_weather(city : str) -> str:
