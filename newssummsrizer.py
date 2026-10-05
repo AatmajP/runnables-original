@@ -7,7 +7,7 @@ from langchain_core.output_parsers import StrOutputParser #general output parser
 
 search_tool = TavilySearchResults(max_result = 3)
 
-llm = ChatMistralAI(model = "mistral-small-2603")
+llm = ChatMistralAI(model = "mistral-small-2603" )
 
 prompt = ChatPromptTemplate.from_template(
     """
