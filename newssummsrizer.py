@@ -11,7 +11,7 @@ llm = ChatMistralAI(model = "mistral-small-2603")
 
 prompt = ChatPromptTemplate.from_template(
     """
-You are a helpful assistant
+You are a helpful assistant.
 
 summarize the following news into clear bullet points
 
