@@ -30,4 +30,4 @@ print(result)
 
 print(search_tool.description)
 print(search_tool.name)
-print(search_tool.args)b
+print(search_tool.args)
